@@ -1,7 +1,7 @@
 Source: php-cakephp-utility
 Section: php
 Priority: optional
-Maintainer: CyberVitexus <cybervitexus@gmail.com>
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
 Build-Depends: debhelper-compat (= 13), jq
 Standards-Version: 4.6.2
 Homepage: https://cakephp.org
