@@ -1,0 +1,5 @@
+php-cakephp-utility (5.3.0-1~trixie) trixie; urgency=low
+
+  * Initial Debian packaging
+
+ -- CyberVitexus <cybervitexus@gmail.com>  Tue, 28 Apr 2026 00:00:00 +0000

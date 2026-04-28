@@ -1,0 +1,16 @@
+Source: php-cakephp-utility
+Section: php
+Priority: optional
+Maintainer: CyberVitexus <cybervitexus@gmail.com>
+Build-Depends: debhelper-compat (= 13), jq
+Standards-Version: 4.6.2
+Homepage: https://cakephp.org
+Vcs-Git: https://github.com/Vitexus/php-cakephp-utility.git
+Rules-Requires-Root: no
+
+Package: php-cakephp-utility
+Architecture: all
+Depends: ${misc:Depends}, php-cli | php, composer, php-cakephp-core
+Description: CakePHP Utility classes
+ CakePHP Utility classes such as Inflector, Text, Hash, and Security
+ for the CakePHP framework.
