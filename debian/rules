@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+PKG_VERSION := $(shell dpkg-parsechangelog -S Version | sed 's/~.*//')
+PKG_SOURCE  := $(shell jq -r '.name' composer.json)
+
+%:
+	dh $@
+
+override_dh_install:
+	mkdir -p debian/php-cakephp-utility/usr/share/php/Cake/Utility
+	find . -maxdepth 1 -name '*.php' ! -name '.*' | xargs -r cp -t debian/php-cakephp-utility/usr/share/php/Cake/Utility/
+	find . -mindepth 1 -maxdepth 1 -type d ! -name '.*' ! -name 'vendor' ! -name 'tests' ! -name 'Test*' | xargs -r -I{} cp -r {} debian/php-cakephp-utility/usr/share/php/Cake/Utility/
+	install -m 644 debian/autoload.php debian/php-cakephp-utility/usr/share/php/Cake/Utility/autoload.php
+	sed -i "s|: 'unknown'|: '$(PKG_SOURCE)'|" debian/php-cakephp-utility/usr/share/php/Cake/Utility/autoload.php
+	sed -i "s|: '0.0.0'|: '$(PKG_VERSION)'|" debian/php-cakephp-utility/usr/share/php/Cake/Utility/autoload.php
