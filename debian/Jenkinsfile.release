@@ -48,7 +48,6 @@ distributions.each { distro ->
                     buildImage.inside('--init') {
                         sh 'dch -b -v ' + buildVer  + ' "' + env.BUILD_TAG  + '"'
                         sh 'sudo apt-get update --allow-releaseinfo-change'
-                        sh 'sudo DEBIAN_FRONTEND=noninteractive apt-get -y install pkg-php-tools || true'
                         sh 'sudo chown -R jenkins:jenkins . ..'
                         sh 'sudo rm -rf debian/$(dpkg-parsechangelog --show-field Source)/ debian/.debhelper/ debian/tmp/'
                         sh 'debuild-pbuilder -r"sudo -E" -i -us -uc -b'

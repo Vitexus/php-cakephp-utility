@@ -1,0 +1,6 @@
+debian/.debhelper/
+debian/debhelper-build-stamp
+debian/files
+debian/php-cakephp-utility.substvars
+debian/php-cakephp-utility/
+
