@@ -1,4 +1,4 @@
-php-cakephp-utility (5.3.0-1~trixie) trixie; urgency=low
+php-cakephp-utility (5.3.0) trixie; urgency=low
 
   * Initial Debian packaging
 
